@@ -1,24 +1,42 @@
 package org.example.Payroll.model;
 
+
+import javax.persistence.*;
+
+
+@Entity
+@Table(name = "Employee")
 public class Employee {
-    private int id;
+
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+
     private double salary;
+
+
     private String type;
 
     public Employee() {
     }
 
-    public Employee(int id, double salary, String type) {
+    public Employee(Long id, double salary, String type) {
         this.id = id;
         this.salary = salary;
         this.type = type;
     }
 
-    public int getId() {
+
+
+
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
